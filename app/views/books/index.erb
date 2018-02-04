@@ -1,0 +1,47 @@
+<div class="ui inverted red menu">
+    <a class='item' href="/">
+      <h2 class="ui header">
+        <img src="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photos/9060253/OwlCaveSymbol.png?1477434842" />
+        <div class="content script">
+          Twin Peaks Public Library
+        </div>
+        <div class="sub header">
+          We have books about Twin Peaks, what more do you want?
+        </div>
+      </h2>
+    </a>
+  </div>
+
+  <div class='ui centered grid'>
+
+    <div class='one wide column'></div>
+
+    <!--  form -->
+    <div class='seven wide column'>
+      <%= form_tag("/books", method: "post") do %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+
+    </div>
+
+    <!--  list -->
+    <div class='seven wide column'>
+      <div class="ui relaxed divided list">
+        <% @books.map do |book| %>
+        <div class="ui card">
+          <div class="content">
+            <img src=<%= book.image %>/>
+            <div class="description">
+              <h3><%= book.title %></h3>
+              <p><%= book.subtitle %></p>
+              <p><%= book.author %></p>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+    <div class='one wide column'></div>
+  </div>
