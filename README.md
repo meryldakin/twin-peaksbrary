@@ -1,24 +1,13 @@
-# README
+# XML HTTP Request
+# Breakdown of an XHR Request
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 1. The client sends an XML HTTP request
+The client is the browser or whatever is making the request.
 
-Things you may want to cover:
+## 2. The server composes some type of response
+The server composes a response. The response is typically composed of HTML, JSON, XML etc
 
-* Ruby version
+## 3. The server sends back the response
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 4. The client by default, does nothing with the response
+Its up to us to programmatically (with JS) tell the client what to do with the response
